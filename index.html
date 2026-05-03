@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent 学习笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Markdown 渲染 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- 代码高亮 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" id="hljs-theme-light" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css" id="hljs-theme-dark" disabled />
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换侧边栏">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#" class="site-title" onclick="loadHome()">🤖 Agent 学习笔记</a>
+    </div>
+    <div class="topbar-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- 左侧侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">快速导航</div>
+          <ul class="nav-list">
+            <li><a class="nav-item" href="#" onclick="loadHome()">🏠 首页</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section" id="navContent">
+          <!-- 由 JS 动态生成目录 -->
+        </div>
+      </nav>
+    </aside>
+
+    <!-- 右侧内容区 -->
+    <main class="content" id="mainContent">
+      <!-- 首页欢迎内容，由 JS 渲染 -->
+    </main>
+  </div>
+
+  <!-- 侧边栏遮罩（移动端） -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
