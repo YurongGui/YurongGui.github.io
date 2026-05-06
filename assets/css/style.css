@@ -188,6 +188,20 @@ a:hover { text-decoration: underline; }
 /* 子分类缩进 */
 .nav-sub .nav-item { padding-left: 36px; font-size: 0.85rem; }
 
+/* 二级分组标题（如 Harness Engineering） */
+.nav-subgroup-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 20px 3px 20px;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 二级分组下的文章，再缩进一层 */
+.nav-sub2 .nav-item { padding-left: 52px; font-size: 0.83rem; }
+
 /* ===== Content ===== */
 .content {
   margin-left: var(--sidebar-width);

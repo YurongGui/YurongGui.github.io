@@ -6,17 +6,27 @@ const SITE_CONFIG = {
   title: 'Agent 学习笔记',
   nav: [
     {
-      section: '基础概念',
+      section: '学习笔记',
       icon: '📖',
       desc: 'Agent 核心概念与原理',
       items: [
         { title: '什么是 Agent', path: 'basics/what-is-agent' },
         { title: 'LLM 与 Agent 的关系', path: 'basics/llm-and-agent' },
         { title: 'ReAct 框架原理', path: 'basics/react-framework' },
+      ],
+      groups: [
+        {
+          title: 'Harness Engineering',
+          items: [
+            { title: '到底什么是 Harness', path: 'harness/what-is-harness' },
+            { title: 'OpenAI 的 Harness', path: 'harness/openai-harness' },
+            { title: 'Anthropic 的 Harness', path: 'harness/anthropic-harness' },
+          ]
+        },
       ]
     },
     {
-      section: '主流框架',
+      section: '工程实践',
       icon: '🔧',
       desc: '常用 Agent 框架对比与使用',
       items: [
@@ -26,7 +36,7 @@ const SITE_CONFIG = {
       ]
     },
     {
-      section: '实战笔记',
+      section: '开源项目解读',
       icon: '🚀',
       desc: '动手实践与项目经验',
       items: [
@@ -80,7 +90,21 @@ const SidebarManager = {
           <a class="nav-item" href="#${item.path}" onclick="loadNote('${item.path}', this)">${item.title}</a>
         </li>`;
       });
-      html += `</ul></div>`;
+      html += `</ul>`;
+      // 渲染二级分组（groups）
+      if (group.groups) {
+        group.groups.forEach(subgroup => {
+          html += `<div class="nav-subgroup-title">${subgroup.title}</div>`;
+          html += `<ul class="nav-list nav-sub nav-sub2">`;
+          subgroup.items.forEach(item => {
+            html += `<li>
+              <a class="nav-item" href="#${item.path}" onclick="loadNote('${item.path}', this)">${item.title}</a>
+            </li>`;
+          });
+          html += `</ul>`;
+        });
+      }
+      html += `</div>`;
     });
     container.innerHTML = html;
   },
