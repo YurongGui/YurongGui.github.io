@@ -18,9 +18,9 @@ const SITE_CONFIG = {
         {
           title: 'Harness Engineering',
           items: [
-            { title: '到底什么是 Harness', path: 'harness/what-is-harness' },
-            { title: 'OpenAI 的 Harness', path: 'harness/openai-harness' },
-            { title: 'Anthropic 的 Harness', path: 'harness/anthropic-harness' },
+            { title: '到底什么是 Harness', path: 'notes/harness/what-is-harness' },
+            { title: 'OpenAI 的 Harness', path: 'notes/harness/openai-harness' },
+            { title: 'Anthropic 的 Harness', path: 'notes/harness/anthropic-harness' },
           ]
         },
       ]
